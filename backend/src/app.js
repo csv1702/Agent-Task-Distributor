@@ -3,8 +3,8 @@ import cors from "cors";
 import authRoutes from "./routes/auth.routes.js";
 import errorMiddleware from "./middleware/error.middleware.js";
 import agentRoutes from "./routes/agent.routes.js";
-
-
+import uploadRoutes from "./routes/upload.routes.js";
+import recordRoutes from "./routes/record.routes.js";
 
 const app = express();
 
@@ -20,9 +20,9 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/agents", agentRoutes);
-
+app.use("/api/upload", uploadRoutes);
+app.use("/api/records", recordRoutes);
 
 app.use(errorMiddleware);
-
 
 export default app;
