@@ -8,6 +8,21 @@ const Agents = () => {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
 
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this agent?",
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      await api.delete(`/agents/${id}`);
+      fetchAgents(); // refresh list after delete
+    } catch (error) {
+      alert("Failed to delete agent");
+    }
+  };
+
   const fetchAgents = async () => {
     setLoading(true);
     const res = await api.get("/agents");
@@ -38,6 +53,7 @@ const Agents = () => {
                 <th className="p-3">Name</th>
                 <th className="p-3">Email</th>
                 <th className="p-3">Mobile</th>
+                <th className="p-3">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -46,6 +62,14 @@ const Agents = () => {
                   <td className="p-3">{agent.name}</td>
                   <td className="p-3">{agent.email}</td>
                   <td className="p-3">{agent.mobile}</td>
+                  <td className="p-3">
+                    <button
+                      onClick={() => handleDelete(agent._id)}
+                      className="text-red-600 hover:underline text-sm"
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
