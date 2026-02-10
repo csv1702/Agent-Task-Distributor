@@ -45,7 +45,7 @@ const Upload = () => {
 
   return (
     <div className="bg-white p-6 rounded shadow">
-      <label className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-black transition">
+      <label className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer transition hover:border-black hover:bg-gray-50">
         <input
           type="file"
           accept=".csv,.xls,.xlsx"

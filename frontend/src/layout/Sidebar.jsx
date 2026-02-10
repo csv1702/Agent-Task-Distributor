@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-  const linkClass = "block px-4 py-2 rounded hover:bg-gray-200 transition";
+  const linkClass =
+    "block px-4 py-2 rounded transition hover:bg-gray-200 hover:pl-6";
 
   return (
     <aside className="w-64 bg-white border-r min-h-screen">
