@@ -1,6 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import DashboardLayout from "./layout/DashboardLayout";
+
+import Dashboard from "./pages/Dashboard";
+import Agents from "./pages/Agents";
+import Upload from "./pages/Upload";
+import Distribution from "./pages/Distribution";
 
 const App = () => {
   return (
@@ -12,9 +18,42 @@ const App = () => {
           path="/"
           element={
             <ProtectedRoute>
-              <h1 className="text-2xl text-center mt-10">
-                Dashboard coming soon 🚀
-              </h1>
+              <DashboardLayout>
+                <Dashboard />
+              </DashboardLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/agents"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout>
+                <Agents />
+              </DashboardLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/upload"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout>
+                <Upload />
+              </DashboardLayout>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/distribution"
+          element={
+            <ProtectedRoute>
+              <DashboardLayout>
+                <Distribution />
+              </DashboardLayout>
             </ProtectedRoute>
           }
         />
