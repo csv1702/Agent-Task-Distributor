@@ -145,7 +145,7 @@ Frontend will run on `http://localhost:5173`
 
 ## Demo Video
 
-A working demo video is provided separately as required.
+https://drive.google.com/file/d/1rZiJpHKMqw6jOmkMmb3se7GJfsCg5ZQv/view?usp=sharing
 
 ---
 
